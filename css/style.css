@@ -5,6 +5,7 @@
 }
 body {
   font-family: "Roboto", sans-serif;
+  background-color: #dd8d8d;
 }
 :root {
   --mainColor: rgba(245, 0, 0, 0.28);
@@ -100,32 +101,45 @@ body {
 
 /* Members */
 .content {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 50px 20px;
+  position: relative;
 }
 .content .container {
   margin-left: auto;
   margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 65px;
+}
+@media (max-width: 767px) {
+  .content .container {
+    gap: 50px;
+  }
 }
 .content .member {
-  margin-bottom: 20px;
   /* background-color: #eee; */
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
-    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  border-radius: 57px;
+  background: linear-gradient(145deg, #ec9797, #c77f7f);
+  box-shadow: 10px 10px 20px #b17171, -10px -10px 20px #ffa9a9;
+  color: #001f3f;
   position: relative;
-  color: #777;
 }
 .content .member:last-of-type::before {
   content: "Admin";
   position: absolute;
-  left: 20px;
-  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -19.3px;
   font-size: 1.5rem;
   background-color: var(--mainColor);
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 15px;
+  background-color: #001f3f;
+  color: white;
+}
+.content .member:last-of-type {
+  border-bottom: 7px solid #001f3f;
 }
 .content .member .group {
   display: flex;
@@ -133,17 +147,28 @@ body {
   align-items: center;
   flex-direction: column;
   line-height: 1.7;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: center;
   text-transform: capitalize;
 }
 .content .group p {
   margin-left: 10px;
   margin-bottom: 10px;
+  border-bottom: 1px solid #c17c7c;
 }
 .content .group i {
-  font-size: 2.7rem;
-  color: var(--mainColor);
-  margin-bottom: 10px;
+  font-size: 1.7rem;
+  color: #001f3f;
+  margin-bottom: 5px;
+}
+
+.just-margin-bottom {
+  height: 50px;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .just-margin-bottom {
+    display: none;
+  }
 }
 /* End Members */
