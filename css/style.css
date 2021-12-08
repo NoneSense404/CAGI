@@ -125,7 +125,7 @@ body {
   color: #001f3f;
   position: relative;
 }
-.content .member:last-of-type::before {
+.content .member:first-of-type::before {
   content: "Admin";
   position: absolute;
   left: 50%;
@@ -138,7 +138,7 @@ body {
   background-color: #001f3f;
   color: white;
 }
-.content .member:last-of-type {
+.content .member:first-of-type {
   border-bottom: 7px solid #001f3f;
 }
 .content .member .group {
